@@ -1,0 +1,15 @@
+[
+    {
+        "caption": "Table Generator: generate plain table",
+        "command": "plain_table_generator",
+    },
+    {
+        "caption": "Table Generator: generate markdown table",
+        "command": "markdown_table_generator",
+    },
+    {
+        "caption": "Table Generator: generate latex table",
+        "command": "latex_table_generator",
+    },
+
+]
