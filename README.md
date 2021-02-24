@@ -32,8 +32,9 @@ $ sh install.sh
 1. Select a target area covering the CSV-like text. If there is no selection,
 all text in the current view will be regarded as the raw data;
 2. Press `ctrl/cmd + shift + P` to bring up the `command palette`;
-3. Type `Table Generator` into the `command palette`;
-4. Select a specific converter and press `Enter`.
+3. Enter `Table Generator` into the `command palette`;
+4. Select a specific converter and press `Enter`;
+5. Enter the alignment in the `command palette`, e.g. assign `clr` to a 3-column table, where `c` is for `center-aligned`, and similarly `l` is for `left-aligned`, `r` is for `right-aligned`.
 
 ## Supported Commands
 

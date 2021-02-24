@@ -50,7 +50,7 @@ class LatexTableGeneratorCommand(TableGenerator):
 class AlignmentInputHandler(sublime_plugin.TextInputHandler):
 
     def placeholder(self):
-        return "'clr' means 3-column table with 'center-left-right' alignment"
+        return "'clr': render the 3-column table with 'center-left-right' alignment"
 
     def validate(self, alignment):
         return len(alignment) > 0 and set(alignment).issubset({'c', 'l', 'r'})
