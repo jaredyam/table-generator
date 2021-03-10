@@ -15,7 +15,8 @@ class TableGenerator(sublime_plugin.TextCommand):
                      else sublime.Region(0, self.view.size()))
 
         rawdata = self.view.substr(selection)
-        output = converter(rawdata, alignment=alignment) + '\n'
+        output = converter(
+            rawdata, alignment=alignment if alignment else None) + '\n'
         self.view.replace(edit, selection, output)
 
     def input(self, args):
@@ -53,4 +54,4 @@ class AlignmentInputHandler(sublime_plugin.TextInputHandler):
         return "'clr': render the 3-column table with 'center-left-right' alignment"
 
     def validate(self, alignment):
-        return len(alignment) > 0 and set(alignment).issubset({'c', 'l', 'r'})
+        return len(alignment) == 0 or (len(alignment) > 0 and set(alignment).issubset({'c', 'l', 'r'}))
