@@ -15,8 +15,12 @@ class TableGenerator(sublime_plugin.TextCommand):
                      else sublime.Region(0, self.view.size()))
 
         rawdata = self.view.substr(selection)
-        output = converter(
-            rawdata, alignment=alignment if alignment else None) + '\n'
+        try:
+            output = converter(
+                rawdata, alignment=alignment if alignment else None) + '\n'
+        except Exception as e:
+            sublime.error_message(str(e))
+
         self.view.replace(edit, selection, output)
 
     def input(self, args):
