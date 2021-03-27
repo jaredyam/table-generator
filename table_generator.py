@@ -16,8 +16,9 @@ class TableGenerator(sublime_plugin.TextCommand):
 
         rawdata = self.view.substr(selection)
         try:
-            output = converter(
-                rawdata, alignment=alignment if alignment else None) + '\n'
+            output = converter(rawdata,
+                               alignment=alignment if alignment else None,
+                               raw_string=True) + '\n'
         except Exception as e:
             sublime.error_message(str(e))
 
